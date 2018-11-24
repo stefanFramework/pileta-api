@@ -10,4 +10,4 @@ EXPOSE 80
 
 ENV NAME World
 
-CMD ["python", "src/app/docker-test.py"]
+CMD ["python", "src/app/routes/test/test.py"]
