@@ -2,11 +2,11 @@
 
 #### Init
 ```
-API: sh pileta-api.sh build
+API: sh bootstrap.sh build
 ```
 
 #### Runing
 ```
-API: sh pileta-api.sh start
+API: sh bootstrap.sh start
 DB: docker run -d -p 5432:3306 --name mysql_db -e MYSQL_ROOT_PASSWORD=root mysql:latest
 ```
