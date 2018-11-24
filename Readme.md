@@ -1,6 +1,6 @@
 # Pileta API
 
-#### Building
+#### Init
 ```
 API: sh pileta-api.sh build
 ```

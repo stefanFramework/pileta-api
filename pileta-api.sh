@@ -44,7 +44,6 @@ logs() {
 }
 
 help_menu() {
-    # echo "\033[1;32m$MESSAGE\033[0m"
     print_bold "Available Commands"
     echo ""
     echo "\033[1;34mbuild\033[0m    Build the Docker Image"
