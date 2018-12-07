@@ -1,13 +1,13 @@
 FROM python:3.7-slim
 
-WORKDIR /src
+WORKDIR /app
 
-COPY . /src
+# Copy the current directory (.), into a container in /app/src
+COPY . /app
 
+# Runs the first command, INSIDE the container --> WORKDIR app/requirements ...
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 EXPOSE 80
 
-ENV NAME World
-
-CMD ["python", "src/app/routes/test/test.py"]
+CMD ["python", "src/app/routes/v1/main.py"]

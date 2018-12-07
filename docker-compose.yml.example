@@ -1,0 +1,38 @@
+# Docker Volumes
+#
+# Volume mounts behave differently than the base Docker System.
+# These occurs mostly because Docker tries to align with Apple's FileSystem Sandbox
+# Only certain paths are exported by macOS:
+#
+# - /Users
+# - /Volumes
+# - /tmp
+# - /private
+#
+# To add more directories, just go to Docker -> Preferences -> File Sharing
+version: '3'
+
+services:
+  database:
+    image: mysql
+   # command: --default-authentication-plugin=mysql_native_password
+    container_name: mysql_server
+    #restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=pileta_api
+    volumes:
+      - /tmp/mysql_data:/var/lib/mysql
+    ports:
+      - 5432:3306
+
+  pileta-api:
+    build: ./pileta-api
+    container_name: pileta-api
+    volumes:
+      - ./pileta-api:/app
+    ports:
+      - 4000:80
+    depends_on:
+      - database
+
