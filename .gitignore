@@ -4,8 +4,8 @@
 docker-compose.yml
 
 # Ignore the data, but not the folder itself
-data/*
-!data/.gitkeep
+db/data/*
+!db/data/.gitkeep
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
