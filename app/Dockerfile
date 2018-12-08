@@ -10,4 +10,4 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 EXPOSE 80
 
-CMD ["python", "src/app/routes/v1/main.py"]
+CMD ["python", "src/api/routes/v1/main.py"]

@@ -1,4 +1,12 @@
 .idea/
+*.bak
+.DS_Store
+docker-compose.yml
+
+# Ignore the data, but not the folder itself
+data/*
+!data/.gitkeep
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
