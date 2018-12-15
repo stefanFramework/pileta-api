@@ -1,4 +1,4 @@
-FROM python:3.7-slim
+FROM python:2.7
 
 WORKDIR /app
 
@@ -10,4 +10,4 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 EXPOSE 80
 
-CMD ["python", "src/api/routes/v1/main.py"]
+CMD ["python", "run.py"]

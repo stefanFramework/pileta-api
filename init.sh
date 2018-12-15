@@ -19,6 +19,7 @@ help_menu() {
 build() {
     print_bold "Building ..."
     docker-compose build
+    #docker-compose run --rm database sh -c "mysql -uroot -proot -ppileta_api < db/pileta_api.sql"
     print_bold "Building Succesfull"
 }
 
