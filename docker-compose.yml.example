@@ -13,8 +13,10 @@ services:
       - 5432:3306
 
   pileta-api:
-    build: ./app
-    container_name: pileta-api
+    build: 
+      context: ./
+      dockerfile: Dockerfile.web
+    container_name: pileta_api
     volumes:
       - ./app:/app
     ports:

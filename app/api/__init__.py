@@ -1,13 +1,14 @@
 from flask import Flask
-# from flask_restful import Api
+from flask_restful import Api
 
+from api.routes.v1.utils import Utils
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:root@database/pileta_api'
-    return app
+     # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:root@database/pileta_api'
 
-#
-# def init_api(app):
-#     api = Api(app)
-#     api.add_resource(TodoSimple, '/<string:todo_id>')
+    api = Api(app)
+    api.add_resource(Utils, '/utils')
+
+   
+    return app

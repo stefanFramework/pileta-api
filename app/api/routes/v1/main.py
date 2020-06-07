@@ -1,9 +1,16 @@
-
 import datetime
-from flask import request, jsonify
-# from flask_restful import Resource
-#from flask_sqlalchemy import SQLAlchemy
+from flask import jsonify
+from flask_restful import Resource
 
+class Utils(Resource):
+    def get(self):
+        current_date = datetime.datetime.now()
+        response = {
+            'name': 'pileta-api',
+            'version': '1.0.0',
+            'date': current_date.strftime("%Y-%m-%d %H:%M")
+        }
+        return jsonify(response)
 
 # TODO:
 # Una vez definidas las rutas, pasar a resources --> class MeasurmentsCollection(Resource): ...
@@ -25,15 +32,15 @@ from flask import request, jsonify
 #     notes = db.Column('notes', db.String, nullable=False)
 #
 #
-@app.route('/version', methods=['GET'])
-def version():
-    current_date = datetime.datetime.now()
-    response = {
-        'name': 'pileta-api',
-        'version': '1.0.0',
-        'date': current_date.strftime("%Y-%m-%d %H:%M")
-    }
-    return jsonify(response)
+# @app.route('/version', methods=['GET'])
+# def version():
+#     current_date = datetime.datetime.now()
+#     response = {
+#         'name': 'pileta-api',
+#         'version': '1.0.0',
+#         'date': current_date.strftime("%Y-%m-%d %H:%M")
+#     }
+#     return jsonify(response)
 
 #
 # @app.route('/device', methods=['GET'])
