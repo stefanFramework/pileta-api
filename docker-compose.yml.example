@@ -15,7 +15,7 @@ services:
   pileta-api:
     build: 
       context: ./
-      dockerfile: Dockerfile.web
+      dockerfile: Dockerfile.api
     container_name: pileta_api
     volumes:
       - ./app:/app
