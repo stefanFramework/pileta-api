@@ -1,3 +1,6 @@
 Flask
 Flask-RESTful
 Flask-SQLAlchemy
+Flask-Migrate
+Flask-Script
+mysql-connector-python

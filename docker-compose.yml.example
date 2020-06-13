@@ -1,14 +1,14 @@
 version: '3'
 
 services:
-  database:
+  pileta-db:
     image: mysql:5.7
-    container_name: mysql_server
+    container_name: pileta_api_db
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=pileta_api
     volumes:
-      - ./data:/var/lib/mysql
+      - ./db/data:/var/lib/mysql
     ports:
       - 5432:3306
 
@@ -22,5 +22,5 @@ services:
     ports:
       - 4000:80
     depends_on:
-      - database
+      - pileta-db
 

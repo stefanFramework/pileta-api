@@ -8,6 +8,10 @@ COPY ./app /app
 # Runs the first command, INSIDE the container --> WORKDIR app/requirements ...
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
-EXPOSE 80
+RUN ["chmod", "+x", "entrypoint.sh"]
 
-CMD ["python", "run.py"]
+ENTRYPOINT ["sh", "entrypoint.sh" ]
+
+CMD ["start", "development"]
+
+EXPOSE 80

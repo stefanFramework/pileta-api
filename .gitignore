@@ -2,6 +2,7 @@
 *.bak
 .DS_Store
 docker-compose.yml
+entrypoint.sh.example
 
 # Ignore the data, but not the folder itself
 db/data/*
