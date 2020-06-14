@@ -1,3 +1,4 @@
+#!/bin/sh
 
 start () {
     ENVIRONMENT=$1; shift
@@ -26,17 +27,50 @@ start_production () {
     exit 1
 }
 
+gen_migration() {
+    python3 run.py db migrate -m $1
+}
 
+migrate() {
+    python3 run.py db upgrade
+}
+
+downgrade() {
+    python3 run.py db downgrade
+}
+
+help() {
+    echo "Available Commands"
+    echo ""
+    echo "start: Starts aplication"
+    echo "gen_migration: Creates a new migration file"
+    echo "migrate: Executes migrations"
+    echo "downgrade: Reverse last migration"
+    echo ""
+}
+
+if [ $# -eq 0 ]; then
+    echo "No commands supplied"
+    help
+    exit 1
+fi
 
 COMMAND=$1; shift
 case $COMMAND in
     start)
         start $*
     ;;
+    gen_migration)
+        gen_migration $*
+    ;;
     migrate)
-        migrate $*
+        migrate
+    ;;
+    downgrade)
+        downgrade
     ;;
     *)
+        help
         echo "Invalid command $COMMAND"
         exit 1
     ;;

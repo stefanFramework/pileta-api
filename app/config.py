@@ -12,6 +12,8 @@ class DevelopmentConfig(BaseConfig):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:root@pileta-db/pileta_api'
 
+class ProductionConfig(BaseConfig):
+    pass
 
 if 'PILETA_ENV' not in os.environ:
     os.environ['PILETA_ENV'] = 'development'
