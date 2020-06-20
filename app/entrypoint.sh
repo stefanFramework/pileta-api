@@ -28,15 +28,15 @@ start_production () {
 }
 
 gen_migration() {
-    python3 run.py db migrate -m $1
+    python3 run.py db -o revision -a "$*"
 }
 
 migrate() {
-    python3 run.py db upgrade
+    python3 run.py db -o migrate
 }
 
 downgrade() {
-    python3 run.py db downgrade
+    python3 run.py db -o downgrade
 }
 
 help() {

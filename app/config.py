@@ -1,11 +1,12 @@
-# TODO: Crear una Clase Config por ambiente y meter todos los
-# parametros de configuracion
 import os
 
 class BaseConfig:
     DEBUG = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = ''
+
+    # The number of connections to keep open inside the connection pool
+    SQLALCHEMY_DATABASE_POOL_SIZE = 5
 
 class DevelopmentConfig(BaseConfig):
     DEBUG = True
@@ -21,3 +22,4 @@ if 'PILETA_ENV' not in os.environ:
 env = os.environ['PILETA_ENV']
 cls_name = "{0}Config".format(env.capitalize())
 selected_config = "config.{0}".format(cls_name)
+current_config = eval(cls_name)

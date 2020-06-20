@@ -1,6 +1,7 @@
 Flask
+alembic
 Flask-RESTful
-Flask-SQLAlchemy
-Flask-Migrate
+Flask-SQLAlchemy-Session
 Flask-Script
+SQLAlchemy
 mysql-connector-python

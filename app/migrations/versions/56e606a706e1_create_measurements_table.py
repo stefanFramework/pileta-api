@@ -1,15 +1,14 @@
-"""create_measurements_table
+"""
+create_measurements_table
 
 Revision ID: 56e606a706e1
 Revises: e62a2de1f140
-Create Date: 2020-06-14 23:43:33.826268
-
 """
+
 from alembic import op
 import sqlalchemy as sa
 from sqlalchemy.dialects import mysql
 
-# revision identifiers, used by Alembic.
 revision = '56e606a706e1'
 down_revision = 'e62a2de1f140'
 branch_labels = None
