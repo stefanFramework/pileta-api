@@ -1,7 +1,7 @@
-from domain.models import ModelBase, db
+from domain.models import BaseModel, db
 
 
-class Device(ModelBase):
+class Device(BaseModel):
     __tablename__ = 'devices'
 
     id = db.Column(db.Integer, primary_key=True)

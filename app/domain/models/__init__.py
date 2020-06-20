@@ -19,4 +19,4 @@ class Base():
     def deleted_at(cls):
         return db.Column(db.DateTime) if cls.__soft_delete__ else None
 
-ModelBase = declarative_base(cls=Base)
+BaseModel = declarative_base(cls=Base)
