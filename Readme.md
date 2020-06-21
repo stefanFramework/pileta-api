@@ -22,3 +22,4 @@ TODO:
 - Hacer capa de repositorio y agregarle la logica para softdelete
 - Agregar logger
 - Agregar modulo de tests unitarios
+- Agregar json schema 
