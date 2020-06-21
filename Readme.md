@@ -15,8 +15,10 @@
 
 TODO: 
 
-- [DONE] Emprolijar carga de la app 
-- [DONE] Ver tema alembic y migrations 
+- ~Emprolijar carga de la app~
+- ~Ver tema alembic y migrations~
+- ~Ver ModelBase (Cambiar nombre a BaseModel) si se puede hacer que el
+  created_at y el updated_at te los tome por default~
 - Hacer capa de repositorio y agregarle la logica para softdelete
-- Ver ModelBase (Cambiar nombre a BaseModel) si se puede hacer que el
-  created_at y el updated_at te los tome por default
+- Agregar logger
+- Agregar modulo de tests unitarios

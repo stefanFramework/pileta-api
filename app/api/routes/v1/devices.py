@@ -1,7 +1,8 @@
-from flask import jsonify
+from flask import jsonify, request, abort
 from flask_restful import Resource
 
 from domain.models.devices import Device
+from domain.repositories.devices import DeviceRepository
 from database import get_session
 from datetime import datetime
 
@@ -9,19 +10,23 @@ from datetime import datetime
 class Devices(Resource):
     def __init__(self):
         self.session = get_session()
+        self.repo = DeviceRepository(self.session)
 
     def post(self):
-        pass
+        data = request.get_json()
+
+        device = Device()
+        device.name =  data.get('name', None)
+        device.ip = data.get('ip', None)
+        device.notes = data.get('notes', None)
+
+        self.repo.create(device)
+
+        return {
+            'status': 'OK'
+        }, 201
 
     def get(self):
-        # device = Device()
-        # device.name = 'test2'
-        # device.ip = '123'
-        # device.created_at = datetime.today().strftime('%Y-%m-%d')
-        # device.updated_at = datetime.today().strftime('%Y-%m-%d')
-        # self.session.add(device)
-        # self.session.commit()
-
         return jsonify({
             'status': 'OK'
         })
