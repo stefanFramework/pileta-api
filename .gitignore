@@ -9,6 +9,9 @@ entrypoint.sh.example
 db/data/*
 !db/data/.gitkeep
 
+app/logs/*
+!app/logs/.gitkeep
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

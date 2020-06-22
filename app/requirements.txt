@@ -4,4 +4,6 @@ Flask-RESTful
 Flask-SQLAlchemy-Session
 Flask-Script
 SQLAlchemy
+sqla-softdelete
 mysql-connector-python
+python-json-logger

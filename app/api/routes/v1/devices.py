@@ -1,3 +1,5 @@
+import logging
+
 from flask import jsonify, request, abort
 from flask_restful import Resource
 
@@ -5,6 +7,8 @@ from domain.models.devices import Device
 from domain.repositories.devices import DeviceRepository
 from database import get_session
 from datetime import datetime
+
+logger = logging.getLogger(__name__)
 
 
 class Devices(Resource):
@@ -15,8 +19,10 @@ class Devices(Resource):
     def post(self):
         data = request.get_json()
 
+        logger.info('Receive', extra={'data': str(data)})
+
         device = Device()
-        device.name =  data.get('name', None)
+        device.name = data.get('name', None)
         device.ip = data.get('ip', None)
         device.notes = data.get('notes', None)
 
@@ -27,9 +33,12 @@ class Devices(Resource):
         }, 201
 
     def get(self):
-        return jsonify({
-            'status': 'OK'
-        })
+        devices = self.repo.find_all()
+
+        if devices is None:
+            return []
+
+        return [device.serialize() for device in devices]
 
     def delete(self, id):
         pass

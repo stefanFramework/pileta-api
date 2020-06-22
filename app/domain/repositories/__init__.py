@@ -14,7 +14,7 @@ class BaseRepository():
         self.session.commit()
         return model
     
-    def remove(self, model):
+    def delete(self, model):
         model.deleted_at = datetime.today()
         self.session.commit()
 
