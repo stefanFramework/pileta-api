@@ -1,5 +1,7 @@
 # Pileta API
 
+Basic implementation of an REST API using Flask (Python)
+
 #### System Requirements
  - Register, list and delete devices
  - Register measurements
@@ -18,4 +20,4 @@ TODO:
 - Adding Unit Testing
 - Adding Json Schema for validations
 
-IMPORTANT: This repository is updated. Many Images / Requirements / Packages may be deprecated
+IMPORTANT: This repository is outdated. Many Images / Requirements / Packages may be deprecated
